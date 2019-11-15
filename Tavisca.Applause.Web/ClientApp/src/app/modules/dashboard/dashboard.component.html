@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-12">
+    <ngb-carousel
+      showNavigationArrows="true"
+      showNavigationIndicators="true"
+      interval="3000"
+      pauseOnHover="true"
+      wrap="true"
+    >
+      <ng-template ngbSlide>
+        <honour-banner
+          [recentBadgeWinners]="recentGoldBadgeWinners"
+          badgeType="gold"
+        ></honour-banner>
+      </ng-template>
+      <ng-template ngbSlide>
+        <honour-banner
+          [recentBadgeWinners]="recentSilverBadgeWinners"
+          badgeType="silver"
+        ></honour-banner> </ng-template
+      ><ng-template ngbSlide>
+        <honour-banner
+          [recentBadgeWinners]="recentBronzeBadgeWinners"
+          badgeType="bronze"
+        ></honour-banner>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <dashboard-timesheet-stats></dashboard-timesheet-stats>
+  </div>
+  <div class="col">
+    <pull-request-stats></pull-request-stats>
+  </div>
+  <div class="col-md-4">
+    <dashboard-timeline></dashboard-timeline>
+  </div>
+</div>

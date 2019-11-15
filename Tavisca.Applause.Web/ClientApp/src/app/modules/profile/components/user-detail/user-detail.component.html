@@ -1,0 +1,12 @@
+<app-breadcrumb (display)="showUsers()"></app-breadcrumb>
+<div class="row">
+  <user-profile
+    [employee]="employee"
+    class="col-lg-4 col-xlg-3 col-md-5"
+  ></user-profile>
+  <user-timeline
+    class="col-lg-8 col-xlg-9 col-md-7"
+    [employee]="employee"
+  ></user-timeline>
+  <!-- Column -->
+</div>

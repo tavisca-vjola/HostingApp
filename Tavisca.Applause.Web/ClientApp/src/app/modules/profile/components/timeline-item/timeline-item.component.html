@@ -1,0 +1,15 @@
+<div class="sl-item">
+  <div class="sl-left">
+    <img [src]="employee.profilePictureUrl" alt="user" class="img-circle" />
+  </div>
+  <div class="sl-right">
+    <div>
+      <a href="#" class="link">{{ employee.firstName }}</a>
+      <span class="sl-date"> {{ activity.dateTime | dateAgo }}</span>
+      <p>
+        {{ activity.activity.displayName }}
+      </p>
+    </div>
+  </div>
+</div>
+<hr />

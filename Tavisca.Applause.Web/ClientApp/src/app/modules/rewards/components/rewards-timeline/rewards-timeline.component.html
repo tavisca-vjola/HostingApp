@@ -1,0 +1,38 @@
+<div class="profiletimeline ">
+  <div class="sl-item">
+    <div class="sl-left">
+      <img
+        [src]="rewardedEmployee.employee.profilePictureUrl"
+        alt="user"
+        class="img-circle"
+      />
+    </div>
+  </div>
+  <div class="timeline-panel">
+    <div class="timeline-heading">
+      <h4
+        class="timeline-title"
+        (click)="onEmployeeNameSelect(rewardedEmployee.employee)"
+      >
+        {{
+          (rewardedEmployee.employee
+            ? rewardedEmployee.employee.firstName +
+              " " +
+              rewardedEmployee.employee.lastName
+            : "") | titlecase
+        }}
+      </h4>
+      <p>
+        <span class="label label-light-info">{{
+          rewardedEmployee.employee ? rewardedEmployee.employee.tribe : ""
+        }}</span>
+      </p>
+    </div>
+    <div class="timeline-body">
+      <p>
+        {{ rewardedEmployee.awards ? rewardedEmployee.awards.description : "" }}
+      </p>
+    </div>
+  </div>
+</div>
+<hr />

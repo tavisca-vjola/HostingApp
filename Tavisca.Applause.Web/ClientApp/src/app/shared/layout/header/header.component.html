@@ -1,0 +1,49 @@
+<header class="topbar">
+  <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="dashboard">
+        <img [src]="app.logoUrl" alt="homepage" class="dark-logo" />
+        <img [src]="app.logoUrl" alt="homepage" class="light-logo" />
+        <span>
+          <i class="ml-1 fa fa-font text-white">pplause</i>
+        </span>
+      </a>
+    </div>
+    <ul class="nav ml-2">
+      <li class="nav-item nav-active">
+        <a
+          class="nav-link text-white"
+          [routerLinkActive]="['active']"
+          routerLink="/dashboard"
+          ><b><i class="fa fa-dashboard"></i> {{ navTabs.dashboard }}</b></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link  text-white"
+          [routerLinkActive]="['active']"
+          routerLink="/rewards"
+          ><b><i class="fa fa-trophy"></i> {{ navTabs.rewards }}</b></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link  text-white"
+          [routerLinkActive]="['active']"
+          routerLink="/users"
+          ><b
+            ><i class="mdi mdi-account-multiple"></i> {{ navTabs.users }}</b
+          ></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link text-white"
+          [routerLinkActive]="['active']"
+          routerLink="/rules"
+          ><b><i class="fa fa-puzzle-piece"></i> {{ navTabs.rules }}</b></a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>

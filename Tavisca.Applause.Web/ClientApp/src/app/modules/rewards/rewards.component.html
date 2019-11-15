@@ -1,0 +1,229 @@
+<ngb-tabset #rewardsPageSubTabs="ngbTabset">
+  <ngb-tab id="kudos">
+    <ng-template ngbTabTitle>{{ rewardTitles.kudos }}</ng-template>
+    <ng-template ngbTabContent>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-end mb-3">
+            <form class="form-inline">
+              <div
+                class="d-inline-block"
+                ngbDropdown
+                #monthSelector="ngbDropdown"
+              >
+                <button
+                  class="btn btn-outline-primary mr-2"
+                  id="dropdownManual"
+                  ngbDropdownAnchor
+                  (focus)="monthSelector.open()"
+                >
+                  {{ selectedKudosMonth }}
+                </button>
+                <div
+                  class="height-chop-300"
+                  ngbDropdownMenu
+                  aria-labelledby="dropdownManual"
+                >
+                  <button
+                    *ngFor="let month of dropDownMonths"
+                    ngbDropdownItem
+                    (click)="
+                      getKudosWinners({ month: month, year: selectedKudosYear })
+                    "
+                  >
+                    {{ month }}
+                  </button>
+                </div>
+              </div>
+              <div
+                class="d-inline-block"
+                ngbDropdown
+                #yearSelector="ngbDropdown"
+              >
+                <button
+                  class="btn btn-outline-primary mr-2"
+                  id="dropdownManual"
+                  ngbDropdownAnchor
+                  (focus)="yearSelector.open()"
+                >
+                  {{ selectedKudosYear }}
+                </button>
+                <div
+                  class="height-chop-300"
+                  ngbDropdownMenu
+                  aria-labelledby="dropdownManual"
+                >
+                  <button
+                    *ngFor="let year of dropDownYears"
+                    ngbDropdownItem
+                    (click)="
+                      getKudosWinners({ month: selectedKudosMonth, year: year })
+                    "
+                  >
+                    {{ year }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row" *ngIf="kudosWinners.length != 0">
+            <rewards-timeline
+              *ngFor="let employee of kudosWinners"
+              class="col-md-6"
+              [rewardedEmployee]="employee"
+            ></rewards-timeline>
+          </div>
+          <div class="row" *ngIf="kudosWinners.length == 0">
+            <div class="no-content col-md-6">
+              <h3>{{ noContent.heading }}</h3>
+              <h6>{{ noContent.subtitle }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="shoutout">
+    <ng-template ngbTabTitle>{{ rewardTitles.shoutout }}</ng-template>
+    <ng-template ngbTabContent>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-end mb-3">
+            <form class="form-inline">
+              <div
+                class="d-inline-block"
+                ngbDropdown
+                #monthSelector="ngbDropdown"
+              >
+                <button
+                  class="btn btn-outline-primary mr-2"
+                  id="dropdownManual"
+                  ngbDropdownAnchor
+                  (focus)="monthSelector.open()"
+                >
+                  {{ selectedShoutoutMonth }}
+                </button>
+                <div
+                  class="height-chop-300"
+                  ngbDropdownMenu
+                  aria-labelledby="dropdownManual"
+                >
+                  <button
+                    *ngFor="let month of dropDownMonths"
+                    ngbDropdownItem
+                    (click)="
+                      getShoutoutWinners({
+                        month: month,
+                        year: selectedShoutoutYear
+                      })
+                    "
+                  >
+                    {{ month }}
+                  </button>
+                </div>
+              </div>
+              <div
+                class="d-inline-block"
+                ngbDropdown
+                #yearSelector="ngbDropdown"
+              >
+                <button
+                  class="btn btn-outline-primary mr-2"
+                  id="dropdownManual"
+                  ngbDropdownAnchor
+                  (focus)="yearSelector.open()"
+                >
+                  {{ selectedShoutoutYear }}
+                </button>
+                <div
+                  class="height-chop-300"
+                  ngbDropdownMenu
+                  aria-labelledby="dropdownManual"
+                >
+                  <button
+                    *ngFor="let year of dropDownYears"
+                    ngbDropdownItem
+                    (click)="
+                      getShoutoutWinners({
+                        month: selectedShoutoutMonth,
+                        year: year
+                      })
+                    "
+                  >
+                    {{ year }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row" *ngIf="shoutoutsWinners.length != 0">
+            <rewards-timeline
+              *ngFor="let employee of shoutoutsWinners"
+              [rewardedEmployee]="employee"
+              class="col-md-6"
+            ></rewards-timeline>
+          </div>
+          <div class="row" *ngIf="shoutoutsWinners.length == 0">
+            <div class="no-content col-md-6">
+              <h3>{{ noContent.heading }}</h3>
+              <h6>{{ noContent.subtitle }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="annual">
+    <ng-template ngbTabTitle>{{ rewardTitles.annual }}</ng-template>
+    <ng-template ngbTabContent>
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex justify-content-end mb-3">
+            <form class="form-inline">
+              <div
+                class="d-inline-block"
+                ngbDropdown
+                #yearSelector="ngbDropdown"
+              >
+                <button
+                  class="btn btn-outline-primary mr-2"
+                  id="dropdownManual"
+                  ngbDropdownAnchor
+                  (focus)="yearSelector.open()"
+                >
+                  {{ selectedAnnualYear }}
+                </button>
+                <div
+                  class="height-chop-300"
+                  ngbDropdownMenu
+                  aria-labelledby="dropdownManual"
+                >
+                  <button
+                    *ngFor="let year of dropDownYears"
+                    ngbDropdownItem
+                    (click)="getAnnualWinners(year)"
+                  >
+                    {{ year }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="row" *ngIf="annualWinners.length != 0">
+            <div class="col-md-6" *ngFor="let employee of annualWinners">
+              <rewards-timeline
+                [rewardedEmployee]="employee"
+              ></rewards-timeline>
+            </div>
+          </div>
+          <div class="row" *ngIf="annualWinners.length == 0">
+            <div class="no-content col-md-6">
+              <h3>{{ noContent.heading }}</h3>
+              <h6>{{ noContent.subtitle }}</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-tab>
+</ngb-tabset>

@@ -1,0 +1,8 @@
+<div class="row justify-content-center honour-banner">
+  <div class="col-md-2" *ngFor="let recentBadgeWinner of recentBadgeWinners">
+    <honour-card
+      [recentBadgeWinner]="recentBadgeWinner"
+      [badgeType]="badgeType"
+    ></honour-card>
+  </div>
+</div>

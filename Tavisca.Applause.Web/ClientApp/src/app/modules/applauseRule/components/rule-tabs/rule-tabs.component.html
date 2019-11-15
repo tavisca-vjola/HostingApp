@@ -1,0 +1,102 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">{{ applauseruletext.ruleDescription }}</h3>
+        <h6 class="card-subtitle">
+          {{ applauseruletext.applicabletext }}
+        </h6>
+        <ngb-tabset [justify]="currentJustify">
+          <ngb-tab [title]="applauseruletext.tabs.badge">
+            <ng-template ngbTabContent>
+              <div *ngFor="let badge of badgeRules">
+                <div class="card r m-2">
+                  <div class="card-body row">
+                    <div class="d-flex flex-row col-md-3 text-center">
+                      <div class="round align-self-center round-success">
+                        <i class=" sl-icon-badge"></i>
+                      </div>
+                      <div class="m-l-10 align-self-center">
+                        <h3 class="m-b-0">{{ badge.badgeType }}</h3>
+                      </div>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="card-text">
+                        <ul class="fa-ul">
+                          <li class="mt-2">
+                            <i class=" fa-li fa fa-caret-right"></i
+                            >{{ badge.description }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab [title]="applauseruletext.tabs.timesheet">
+            <ng-template ngbTabContent>
+              <div *ngFor="let ruleList of platformRules">
+                <div *ngIf="ruleList.platformName == 'Time Sheet'">
+                  <div class="card r m-2">
+                    <div class="card-body row">
+                      <div class="d-flex flex-row col-md-3 text-center">
+                        <div class="round align-self-center round-success">
+                          <i class="  fa fa-calendar-o"></i>
+                        </div>
+                        <div class="m-l-10 align-self-center">
+                          <h3 class="m-b-0">{{ ruleList.ruleName }}</h3>
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-text">
+                          <ul class="fa-ul">
+                            <li class="mt-2">
+                              <i class=" fa-li fa fa-caret-right"></i
+                              >{{ ruleList.description }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab [title]="applauseruletext.tabs.github">
+            <ng-template ngbTabContent>
+              <div *ngFor="let ruleList of platformRules">
+                <div *ngIf="ruleList.platformName == 'Github'">
+                  <div class="card r m-2">
+                    <div class="card-body row">
+                      <div class="d-flex flex-row col-md-3 text-center">
+                        <div class="round align-self-center round-success">
+                          <i class="  fa fa-calendar-o"></i>
+                        </div>
+                        <div class="m-l-10 align-self-center">
+                          <h3 class="m-b-0">{{ ruleList.ruleName }}</h3>
+                        </div>
+                      </div>
+                      <div class="col-md-9">
+                        <div class="card-text">
+                          <ul class="fa-ul">
+                            <li class="mt-2">
+                              <i class=" fa-li fa fa-caret-right"></i
+                              >{{ ruleList.description }}
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+      </div>
+    </div>
+  </div>
+</div>

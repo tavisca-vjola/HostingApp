@@ -1,0 +1,45 @@
+<div class="row mb-4">
+  <div class="col-md-4 offset-md-4">
+    <div class="input-group mb-3">
+      <input
+        placeholder="Search Employee"
+        type="text"
+        class="form-control"
+        [(ngModel)]="employeeSearchParam"
+      />
+      <div
+        class="input-group-append"
+        (click)="searchEmployee(employeeSearchParam)"
+      >
+        <button class="btn btn-info" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pagination-control-container d-flex justify-content-end mb-3">
+  <button class="btn btn-outline-info mr-2" (click)="getPreviousPage()">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </button>
+  <button class="btn btn-outline-info" (click)="getNextPage()">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </button>
+</div>
+<div class="row">
+  <div class="col-md-2" *ngFor="let employee of employeeCards">
+    <employee-card
+      class="employee-card"
+      (click)="onSelect(employee)"
+      [employee]="employee"
+    ></employee-card>
+  </div>
+</div>
+<div class="pagination-control-container d-flex justify-content-end">
+  <button class="btn btn-outline-info mr-2" (click)="getPreviousPage()">
+    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+  </button>
+  <button class="btn btn-outline-info" (click)="getNextPage()">
+    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+  </button>
+</div>

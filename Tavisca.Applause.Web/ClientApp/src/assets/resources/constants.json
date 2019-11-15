@@ -1,0 +1,33 @@
+{
+  "app": {
+    "name": "Applause",
+    "logoUrl": "assets/images/applogo.png"
+  },
+  "navTabs": {
+    "dashboard": "Dashboard",
+    "rewards": "Rewards",
+    "users": "Users",
+    "rules": "Rules"
+  },
+  "footerTexts": {
+    "copyright": "cxLoyalty Group, Inc.",
+    "rights": "All rights reserved.",
+    "poweredBy": " Powered By Tavisca"
+  },
+  "labels": {
+    "email": "Email address",
+    "squad": "Squad",
+    "users": "Users",
+    "userProfile": "User Profile",
+    "goBack": "Go Back",
+    "profile": "Profile",
+    "employees": "Employees"
+  },
+  "imagesUrl": {
+    "medals": {
+      "gold": "assets/images/goldmedal2.png",
+      "silver": "assets/images/silvermedal2.png",
+      "bronze": "assets/images/bronzemedal2.png"
+    }
+  }
+}

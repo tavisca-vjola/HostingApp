@@ -1,0 +1,18 @@
+<div
+  id="main-wrapper"
+  [ngClass]="{
+    bluedark: color == 'bluedark',
+    'dark-theme': showDarktheme,
+    'horizontal-nav': showHorizontalNav,
+    boxed: showBoxedtheme,
+    'rtl-theme': showRtl
+  }"
+>
+  <app-header class="w-100"></app-header>
+  <div class="page-wrapper">
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

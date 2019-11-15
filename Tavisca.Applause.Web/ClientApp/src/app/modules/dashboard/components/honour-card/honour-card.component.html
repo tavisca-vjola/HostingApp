@@ -1,0 +1,22 @@
+<div class="card honour-card">
+  <div class="card-body text-center">
+    <img
+      [src]="recentBadgeWinner.profilePictureUrl"
+      class="rounded-circle border p-1"
+      width="100"
+      height="100"
+    />
+    <h4 class="card-title mt-2 mb-0">
+      {{ recentBadgeWinner.firstName | titlecase }}
+    </h4>
+    <span class="badge badge-pill badge-primary">{{
+      recentBadgeWinner.tribe | uppercase
+    }}</span>
+    <div class="mt-1 pt-3">
+      <span class="badge badge-pill badge-success"
+        ><b>{{ recentBadgeWinner.rewardStats.points }}</b></span
+      >
+    </div>
+    <img src="assets/images/{{ badgeType }}medal2.png" />
+  </div>
+</div>

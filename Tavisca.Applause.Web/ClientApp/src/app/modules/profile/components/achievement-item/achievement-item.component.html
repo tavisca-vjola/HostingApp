@@ -1,0 +1,24 @@
+<div class="comment-widgets">
+  <div
+    class="d-flex flex-row comment-row"
+    *ngFor="let recentcomment of recentcomments"
+  >
+    <div class="p-2">
+      <span class="round"
+        ><img src="{{ employee.profilePictureUrl }}" alt="user" width="50"
+      /></span>
+    </div>
+    <div class="comment-text w-100">
+      <h5>{{ employee.firstName }}</h5>
+      <p class="m-b-5">{{ award.description }}</p>
+      <div class="comment-footer">
+        <span class="text-muted pull-right"
+          >{{ award.month }}/{{ award.year }}</span
+        >
+        <span class="label {{ recentcomment.labelcolor }}">{{
+          award.name
+        }}</span>
+      </div>
+    </div>
+  </div>
+</div>

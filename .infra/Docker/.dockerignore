@@ -1,0 +1,17 @@
+**/.dockerignore
+**/.git
+**/.gitignore
+**/.project
+**/.infra
+**/.vs
+**/.vscode
+**/bin
+**/Dockerfile*
+**/node_modules
+**/npm-debug.log
+**/Tavisca.Applause
+**/Tavisca.Applause.Cassandra
+**/Tavisca.Applause.Core
+**/Tavisca.Applause.Tests
+**/Tavisca.Applause.Web
+README.md

@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">{{ dashboardtext.timesheet }}</h4>
+    <br />
+    <ngb-tabset #t="ngbTabset">
+      <ngb-tab id="timeline" title="Tribe Wise">
+        <ng-template ngbTabContent>
+          <ngx-charts-pie-chart
+            class="chart-container"
+            [view]="chartDimension"
+            [scheme]="colorScheme"
+            [results]="tribeTimesheetstats"
+            [labels]="showLabels"
+          >
+          </ngx-charts-pie-chart>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab id="achievement">
+        <ng-template ngbTabTitle>{{
+          dashboardtext.organizationWisetext
+        }}</ng-template>
+        <ng-template ngbTabContent>
+          <ngx-charts-bar-vertical
+            [view]="chartDimension"
+            [scheme]="timeSheetColorScheme"
+            [results]="organizationtimeSheetStats"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [barPadding]="10"
+          >
+          </ngx-charts-bar-vertical>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+</div>

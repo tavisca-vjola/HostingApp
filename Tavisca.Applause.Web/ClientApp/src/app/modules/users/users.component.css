@@ -1,0 +1,22 @@
+.btn {
+  cursor: pointer;
+}
+
+.user-search-dropdown-element {
+  width: 20px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.rewards-icon {
+  color: gold;
+  margin-bottom: 4px;
+}
+
+::ng-deep .dropdown-menu {
+  width: 100%;
+}
+
+.employee-card {
+  cursor: pointer;
+}

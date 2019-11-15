@@ -1,0 +1,71 @@
+<div class="card">
+  <ngb-tabset #t="ngbTabset">
+    <ngb-tab id="timeline" [title]="labels.timeline">
+      <ng-template ngbTabContent>
+        <div
+          class="card-body scrollbar scrollbar-primary"
+          infinite-scroll
+          [scrollWindow]="false"
+          [infiniteScrollDistance]="scrollDistance"
+          [infiniteScrollUpDistance]="scrollUpDistance"
+          [infiniteScrollThrottle]="throttle"
+          (scrolled)="onScrollDownForTimeline()"
+        >
+          <div class="profiletimeline force-overflow">
+            <div class="search-results">
+              <p *ngFor="let activity of activities">
+                <timeline-item
+                  [activity]="activity"
+                  [employee]="employee"
+                ></timeline-item>
+              </p>
+            </div>
+          </div>
+          <i
+            class="loader fa fa-spinner fa-spin offset-md-6"
+            *ngIf="!finishedForTimeline"
+          ></i>
+          <span
+            class="badge badge-info offset-md-6 text-white"
+            *ngIf="finishedForTimeline"
+            >{{ labels.noMoreActivity }}</span
+          >
+        </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab id="achievement">
+      <ng-template ngbTabTitle>{{ labels.achievement }}</ng-template>
+      <ng-template ngbTabContent>
+        <div
+          class="card-body scrollbar scrollbar-primary"
+          infinite-scroll
+          [scrollWindow]="false"
+          [infiniteScrollDistance]="scrollDistance"
+          [infiniteScrollUpDistance]="scrollUpDistance"
+          [infiniteScrollThrottle]="throttle"
+          (scrolled)="onScrollDownForAward()"
+        >
+          <div class="force-overflow">
+            <div class="search-results">
+              <p *ngFor="let award of awards">
+                <achievement-item
+                  [employee]="employee"
+                  [award]="award"
+                ></achievement-item>
+              </p>
+            </div>
+          </div>
+          <i
+            class="loader fa fa-spinner fa-spin offset-md-6"
+            *ngIf="!finishedForAward"
+          ></i>
+          <span
+            class="badge badge-info offset-md-6 text-white"
+            *ngIf="finishedForAward"
+            >{{ labels.noMoreActivity }}</span
+          >
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

@@ -1,0 +1,12 @@
+.reward-silver {
+  color: #aaa9ad;
+  margin-bottom: 4px;
+}
+
+.reward-bronze {
+  color: #cd7f32;
+  margin-bottom: 4px;
+}
+.btn {
+  cursor: pointer;
+}
